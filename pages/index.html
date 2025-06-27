@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Platform lelang barang bekas terpercaya">
+    <meta name="keywords" content="lelang, barang bekas, jual beli, online">
+    <title>LelangBekas - Lelang Barang Bekas Terpercaya</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<script>
+    // Optional: redirect kalau belum login
+    if (!localStorage.getItem("loggedInUser")) {
+        window.location.href = "login.html";
+    }
+</script>
+
+<body class="bg-gray-100 font-sans">
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-3 ">
+            <div class="flex items-center justify-between gap-4">
+                <!-- Important: gap -->
+                <!-- Logo -->
+                <div class="text-2xl font-bold text-gray-800">
+                    <i class="fas fa-gavel mr-2"></i><a href="index.html">LelangBarang</a>
+                </div>
+
+                <!-- Bar Pencarian (Tengah) -->
+                <div class="hidden md:flex items-center w-1/3">
+                    <input id="search-bar" type="text" placeholder="Cari barang..."
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500">
+                </div>
+
+                <!-- Links dan Tombol Login/Daftar -->
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">Beranda</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">Barang Lelang</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">Cara Kerja</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-300">Kontak</a>
+
+                    <!-- Tombol Login -->
+                    <a href="login.html"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">
+                        Login
+                    </a>
+
+                    <!-- Tombol Daftar -->
+                    <a href="#"
+                        class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition duration-300">
+                        Daftar
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bar Pencarian Mobile (Tersembunyi di Mobile) -->
+            <div class="mt-4 md:hidden">
+                <input type="text" placeholder="Cari barang lelang..."
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+            </div>
+        </nav>
+    </header>
+
+
+    <!--Katalog Kategori-->
+    <main class="container mx-auto px-6 pt-24 pb-8">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Kategori Lelang</h1>
+        <div class="relative w-full py-6">
+            <!-- Tombol panah kiri -->
+            <button id="scrollLeft"
+                class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-700 rounded-full shadow-lg p-3 hover:bg-gray-300 focus:outline-none">
+                <i class="bi bi-chevron-left text-2xl"></i>
+            </button>
+            <!-- Katalog kategori -->
+            <div id="categoryContainer" class="w-full flex space-x-8 py-4 overflow-x-hidden scroll-smooth">
+                <button
+                    class="flex-none w-40 h-40 bg-gray-100 rounded-lg shadow-neumorphic flex flex-col items-center justify-center transform transition-transform hover:scale-105 category-btn"
+                    data-category="Rumah">
+                    <i class="ph ph-house-line text-gray-700 text-4xl mb-2"></i>
+                    <span class="text-gray-700 font-semibold">Rumah</span>
+                </button>
+                <button
+                    class="flex-none w-40 h-40 bg-gray-100 rounded-lg shadow-neumorphic flex flex-col items-center justify-center transform transition-transform hover:scale-105 category-btn"
+                    data-category="Mobil">
+                    <i class="ph ph-car-profile text-gray-700 text-4xl mb-2"></i>
+                    <span class="text-gray-700 font-semibold">Mobil</span>
+                </button>
+                <button
+                    class="flex-none w-40 h-40 bg-gray-100 rounded-lg shadow-neumorphic flex flex-col items-center justify-center transform transition-transform hover:scale-105 category-btn"
+                    data-category="Motor">
+                    <i class="ph ph-motorcycle text-gray-700 text-4xl mb-2"></i>
+                    <span class="text-gray-700 font-semibold">Motor</span>
+                </button>
+                <button
+                    class="flex-none w-40 h-40 bg-gray-100 rounded-lg shadow-neumorphic flex flex-col items-center justify-center transform transition-transform hover:scale-105 category-btn"
+                    data-category="Tanah">
+                    <i class="bi bi-map text-gray-700 text-4xl mb-2"></i>
+                    <span class="text-gray-700 font-semibold">Tanah</span>
+                </button>
+                <button
+                    class="flex-none w-40 h-40 bg-gray-100 rounded-lg shadow-neumorphic flex flex-col items-center justify-center transform transition-transform hover:scale-105 category-btn"
+                    data-category="Elektronik">
+                    <i class="bi bi-tv text-gray-700 text-4xl mb-2"></i>
+                    <span class="text-gray-700 font-semibold">Elektronik</span>
+                </button>
+                <button
+                    class="flex-none w-40 h-40 bg-gray-100 rounded-lg shadow-neumorphic flex flex-col items-center justify-center transform transition-transform hover:scale-105 category-btn"
+                    data-category="Ruko">
+                    <i class="bi bi-shop text-gray-700 text-4xl mb-2"></i>
+                    <span class="text-gray-700 font-semibold">Ruko</span>
+                </button>
+                <button
+                    class="flex-none w-40 h-40 bg-gray-100 rounded-lg shadow-neumorphic flex flex-col items-center justify-center transform transition-transform hover:scale-105 category-btn"
+                    data-category="Hotel">
+                    <i class="ph ph-building text-gray-700 text-4xl mb-2"></i>
+                    <span class="text-gray-700 font-semibold">Hotel</span>
+                </button>
+                <button
+                    class="flex-none w-40 h-40 bg-gray-100 rounded-lg shadow-neumorphic flex flex-col items-center justify-center transform transition-transform hover:scale-105 category-btn"
+                    data-category="Appartement">
+                    <i class="ph ph-building-apartment text-gray-700 text-4xl mb-2"></i>
+                    <span class="text-gray-700 font-semibold">Appartement</span>
+                </button>
+            </div>
+
+            <!-- Container untuk menampilkan item barang -->
+            <div id="itemsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                <!-- Barang lelang akan ditampilkan di sini -->
+            </div>
+
+            <!-- Tombol panah kanan -->
+            <button id="scrollRight"
+                class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-700 rounded-full shadow-lg p-3 hover:bg-gray-300 focus:outline-none">
+                <i class="bi bi-chevron-right text-2xl"></i>
+            </button>
+        </div>
+
+        <style>
+            /* Sembunyikan scrollbar default */
+
+            #categoryContainer::-webkit-scrollbar {
+                display: none;
+            }
+
+            #categoryContainer {
+                -ms-overflow-style: none;
+                /* IE and Edge */
+                scrollbar-width: none;
+                /* Firefox */
+            }
+
+            /* Neumorphic shadow */
+
+            .shadow-neumorphic {
+                box-shadow: 9px 9px 18px #bebebe, -9px -9px 18px #ffffff;
+            }
+
+            /* Atur z-index lebih tinggi untuk tombol agar tidak tertutup elemen lain */
+
+            #scrollLeft,
+            #scrollRight {
+                z-index: 10;
+            }
+        </style>
+
+    </main>
+
+    <main class="container mx-auto px-6 py-8">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Barang Lelang Terbaru</h1>
+        <div id="barang-lelang-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Barang lelang akan ditampilkan di sini -->
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-between items-center">
+                <div class="w-full md:w-1/3 text-center md:text-left">
+                    <h3 class="text-lg font-semibold">LelangBekas</h3>
+                    <p class="mt-2 text-sm">Platform lelang barang bekas terpercaya</p>
+                </div>
+                <div class="w-full md:w-1/3 mt-4 md:mt-0">
+                    <h4 class="text-lg font-semibold mb-2">Hubungi Kami</h4>
+                    <p class="text-sm">Email: info@lelangbekas.com</p>
+                    <p class="text-sm">Telp: (021) 1234-5678</p>
+                </div>
+                <div class="w-full md:w-1/3 mt-4 md:mt-0 text-center md:text-right">
+                    <h4 class="text-lg font-semibold mb-2">Ikuti Kami</h4>
+                    <div class="flex justify-center md:justify-end space-x-4">
+                        <a href="#" class="text-white hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-blue-400 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm">
+                <p>&copy; 2024 LelangBekas. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

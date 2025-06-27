@@ -1,0 +1,39 @@
+[
+    {
+        "id": 1,
+        "nama": "Laptop Gaming",
+        "harga_awal": 2000,
+        "waktu_akhir": "2025-10-28T12:00:00",
+        "kategori": "Elektronik",
+        "gambar": [
+            "/assets/images/laptop-gaming.jpeg",
+            "/assets/images/mobil.jpeg",
+            "/assets/images/motor-bekas.jpeg"
+        ],
+        "deskripsi": "Laptop gaming dengan spesifikasi tinggi, cocok untuk bermain game AAA",
+        "jenis_barang": "Elektronik",
+        "bukti_kepemilikan": "Sertifikat Garansi",
+        "tahun_pembuatan": "2020",
+        "kondisi": "Bekas - Terawat",
+        "lokasi": "Jakarta Selatan",
+        "uraian": "Uraian lengkap tentang kondisi barang, sejarah penggunaan, dan informasi detail lainnya."
+    },
+    {
+        "id": 2,
+        "nama": "Motor Bekas",
+        "harga_awal": 5000000,
+        "waktu_akhir": "2025-11-02T15:00:00",
+        "kategori": "Motor",
+        "gambar": "/assets/images/motor-bekas.jpeg",
+        "deskripsi": "Motor bekas dengan kondisi 90% masih sangat baik, ideal untuk keperluan harian."
+    },
+    {
+        "id": 3,
+        "nama": "Mobil Bekas",
+        "harga_awal": 15000,
+        "waktu_akhir": "2025-10-01T15:00:00",
+        "kategori": "Mobil",
+        "gambar": "/assets/images/mobil.jpeg",
+        "deskripsi": "Mobil bekas dengan kondisi 90% masih sangat baik, ideal untuk keperluan harian."
+    }
+]

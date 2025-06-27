@@ -1,0 +1,31 @@
+/* Gaya untuk tombol */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #2563eb; /* Warna biru */
+    color: white;
+}
+
+/* Gaya untuk loading indicator */
+#loadingIndicator {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 50;
+    justify-content: center;
+    align-items: center;
+}
+
+#loadingIndicator.active {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .example-class {
+        font-size: 14px;
+    }
+}

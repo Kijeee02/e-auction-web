@@ -1,0 +1,116 @@
+[
+  {
+    "barang_id": 1,
+    "penawaran_terakhir": 79000,
+    "riwayat_penawaran": [
+      {
+        "nama_user": "ris",
+        "penawaran": 50000
+      },
+      {
+        "nama_user": "asda",
+        "penawaran": 51000
+      },
+      {
+        "nama_user": "asdas",
+        "penawaran": 53000
+      },
+      {
+        "nama_user": "asdas",
+        "penawaran": 55000
+      },
+      {
+        "nama_user": "jeki",
+        "penawaran": 57000
+      },
+      {
+        "nama_user": "kijeee",
+        "penawaran": 59000
+      },
+      {
+        "nama_user": "gri",
+        "penawaran": 65000
+      },
+      {
+        "nama_user": "riski",
+        "penawaran": 67000
+      },
+      {
+        "nama_user": "mulki",
+        "penawaran": 69000
+      },
+      {
+        "nama_user": "fer",
+        "penawaran": 71000
+      },
+      {
+        "nama_user": "eee",
+        "penawaran": 73000
+      },
+      {
+        "nama_user": "asda",
+        "penawaran": 75000
+      },
+      {
+        "nama_user": "ffff",
+        "penawaran": 77000
+      },
+      {
+        "nama_user": "asdada",
+        "penawaran": 79000
+      }
+    ]
+  },
+  {
+    "barang_id": 2,
+    "penawaran_terakhir": 59000000,
+    "riwayat_penawaran": [
+      {
+        "nama_user": "riski",
+        "penawaran": 5000000
+      },
+      {
+        "nama_user": "jika",
+        "penawaran": 5000001
+      },
+      {
+        "nama_user": "mulki",
+        "penawaran": 52000000
+      },
+      {
+        "nama_user": "riskis",
+        "penawaran": 55000000
+      },
+      {
+        "nama_user": "riski",
+        "penawaran": 57000000
+      },
+      {
+        "nama_user": "rilo",
+        "penawaran": 59000000
+      }
+    ]
+  },
+  {
+    "barang_id": 3,
+    "penawaran_terakhir": 51111111,
+    "riwayat_penawaran": [
+      {
+        "nama_user": "Cici",
+        "penawaran": 700000
+      },
+      {
+        "nama_user": "ri",
+        "penawaran": 160000000000000000
+      },
+      {
+        "nama_user": "faidal",
+        "penawaran": 1231231
+      },
+      {
+        "nama_user": "riskihmbdr",
+        "penawaran": 51111111
+      }
+    ]
+  }
+]

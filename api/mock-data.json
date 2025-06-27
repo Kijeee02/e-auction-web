@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "nama": "Laptop Gaming",
+        "harga_awal": 2000,
+        "waktu_akhir": "2025-10-28T12:00:00",
+        "kategori": "Elektronik",
+        "gambar": "gambar/laptop-gaming.jpeg",
+        "deskripsi": "Laptop gaming dengan spesifikasi tinggi, cocok untuk bermain game AAA"
+    },
+    {
+        "id": 2,
+        "nama": "Motor Bekas",
+        "harga_awal": 5000000,
+        "waktu_akhir": "2025-11-02T15:00:00",
+        "kategori": "Motor",
+        "gambar": "gambar/motor-bekas.jpeg",
+        "deskripsi": "Motor bekas dengan kondisi 90% masih sangat baik, ideal untuk keperluan harian."
+    },
+    {
+        "id": 3,
+        "nama": "Mobil Bekas",
+        "harga_awal": 15000000,
+        "waktu_akhir": "2024-10-01T15:00:00",
+        "kategori": "Mobil",
+        "gambar": "gambar/mobil-bekas.jpeg",
+        "deskripsi": "Mobil bekas dengan kondisi 90% masih sangat baik, ideal untuk keperluan harian."
+    }
+]

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - LelangBekas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: radial-gradient(circle at top left, #0f172a, #020617);
+            color: #e2e8f0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .futuristic-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 25px #3b82f6;
+            backdrop-filter: blur(10px);
+        }
+
+        .futuristic-input {
+            background: transparent;
+            border: 1px solid #94a3b8;
+            color: #e2e8f0;
+        }
+
+        .futuristic-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 10px #3b82f6;
+        }
+
+        .btn-neon {
+            background-color: #3b82f6;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-neon:hover {
+            box-shadow: 0 0 15px #3b82f6, 0 0 25px #3b82f6;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen px-4">
+
+    <div class="w-full max-w-sm p-6 rounded-lg futuristic-card">
+        <h2 class="text-2xl font-bold text-center mb-6">Login ke <span class="text-blue-400">LelangBekas</span></h2>
+        <form id="loginForm" class="space-y-4">
+            <div>
+                <label for="username" class="block text-sm font-semibold">Username</label>
+                <input id="username" type="text" required
+                    class="futuristic-input w-full px-3 py-2 rounded-md focus:outline-none">
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-semibold">Password</label>
+                <input id="password" type="password" required
+                    class="futuristic-input w-full px-3 py-2 rounded-md focus:outline-none">
+            </div>
+            <button type="submit" class="btn-neon w-full py-2 rounded-md font-semibold">
+                Masuk
+            </button>
+        </form>
+        <p class="text-center text-sm mt-4 text-slate-400">
+            Belum punya akun? <a href="daftar.html" class="text-blue-400 hover:underline">Daftar</a>
+        </p>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = form.username.value.trim();
+            const password = form.password.value.trim();
+
+            // Simulasi autentikasi
+            if (username === "admin" && password === "1234") {
+                localStorage.setItem("loggedInUser", username);
+                alert("Login sukses! Mengarahkan ke beranda...");
+                window.location.href = "index.html";
+            } else {
+                alert("Username atau password salah!");
+            }
+        });
+    </script>
+</body>
+
+</html>
